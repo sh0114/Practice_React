@@ -12,12 +12,14 @@ import Accomodate from './chapter_07/Accommodate';
 import ConfirmButton from './chapter_08/ConfirmButton';
 import ConfirmButtonCFS from './chapter_08/ConfirmButtonCFS';
 import ConfirmButtonFC from './chapter_08/ConfirmButtonFC';
+import LandingPage from './chapter_09/LandingPage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-   <ConfirmButtonFC />
+   <LandingPage />
   </React.StrictMode>,
   // document.getElementById('root')
 );
