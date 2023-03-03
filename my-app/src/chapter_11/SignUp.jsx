@@ -2,18 +2,19 @@ import React, {useState} from "react";
 
 function SignUp(props){
     const [name, setName] = useState("홍길동");
-    const [hobby, setHobby] = useState("영화");
-    let listHobby = [];
+    const [hobby, setHobby] = useState([]);
+
     const handleChangeName = (event) => {
         setName(event.target.value);
     }
 
     const handleChangeHobby = (event) => {
-       /* listHobby.push(event.target.value);
+        const obtions = Array.from(event.target.selectedOptions);
+        const listHobby = obtions.map((option) => option.value);
         listHobby.map((elem, index) => {
             console.log(`elem : ${elem}, index : ${index}`);
-        });*/
-        setHobby(event.target.value);
+        });
+        setHobby(listHobby);
     }
 
     const handleSubmit = (event) => {
@@ -26,7 +27,7 @@ function SignUp(props){
             <label>이름:
                 <input type="text" value={name} onChange={handleChangeName}/>
             </label> <br/>
-            <select value={hobby} onChange={handleChangeHobby}>
+            <select multiple={true} value={hobby} onChange={handleChangeHobby}>
                 <option value="운동">운동</option>
                 <option value="독서">독서</option>
                 <option value="영화">영화</option>
